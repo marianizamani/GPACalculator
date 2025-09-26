@@ -2,12 +2,6 @@
 
 let uniNo = parseInt(prompt("  1: Mehran Univerity of Engineering & Technology\n  2: Sindh Agriculture University\n   3: University of Sindh\n   4:Quaid e Azam University Islamabad \n\n Enter your university no(i.e MUET 1): "));
 
-if(uniNo !=1 && uniNo != 2 && uniNo !=3 && uniNo != 4){
-   alert("You enter wrong number");
-   return;
-}
-
-
 let major = parseInt(prompt("How many major you have: "));
 let minor = parseInt(prompt("How many minor you have: "));
 let practical = parseInt(prompt("How many practicals you have: "));
@@ -117,3 +111,4 @@ function point(g, uniNo){
       default: return 0;
    }
 }
+
