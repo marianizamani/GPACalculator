@@ -1,7 +1,8 @@
-
-
 let uniNo = parseInt(prompt("  1: Mehran Univerity of Engineering & Technology\n  2: Sindh Agriculture University\n   3: University of Sindh\n   4:Quaid e Azam University Islamabad \n\n Enter your university no(i.e MUET 1): "));
 
+if(uniNo !=1 && uniNo != 2 && uniNo !=3 && uniNo != 4){
+   alert("You enter wrong number");
+}else{
 let major = parseInt(prompt("How many major you have: "));
 let minor = parseInt(prompt("How many minor you have: "));
 let practical = parseInt(prompt("How many practicals you have: "));
@@ -19,8 +20,7 @@ for(let i =0; i < major; i++){
    majorGrades[i] = prompt("What's your grade in major subject: ").toUpperCase().trim();
    qualityPoints += point(majorGrades[i], uniNo)*3.0;
 }
-
-
+   
 for(let i = 0; i < minor; i++){
    minorGrades[i] = prompt("What's your grade in minor subject: ").toUpperCase().trim();
    qualityPoints += point(minorGrades[i], uniNo)*2.0;
@@ -30,12 +30,10 @@ for(let i = 0; i < minor; i++){
 for(let i = 0; i < practical; i++){
    pracGrades[i] = prompt("What's your grade in practical: ").toUpperCase().trim();
    qualityPoints += point(pracGrades[i], uniNo)*1.0;
-
 }
 
 let g = gpa(qualityPoints,totalCredits);
-alert(`GPA: ${g}`);
-
+alert(`GPA: ${g.toFixed(2)}`);
 
 function gpa(qPoints, tCredits){
    return qPoints/tCredits;
@@ -110,5 +108,6 @@ function point(g, uniNo){
 
       default: return 0;
    }
+}
 }
 
